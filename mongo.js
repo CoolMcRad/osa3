@@ -28,12 +28,12 @@ if ( process.argv.length===3 ) {
   })
 } else {
 
-const person = new Person({
-  name: process.argv[3],
-  number: process.argv[4],
-})
+  const person = new Person({
+    name: process.argv[3],
+    number: process.argv[4],
+  })
 
-person.save().then(response => {
+  person.save().then(response => {
     console.log(`added ${process.argv[3]} number ${process.argv[4]} to phonebook`);
     mongoose.connection.close();
   })
