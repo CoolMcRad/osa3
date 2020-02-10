@@ -4,6 +4,7 @@ const app = express()
 const cors = require('cors')
 
 app.use(cors())
+app.use(express.static('build'))
 
 morgan.token('na', function getId(req) {
   if (req.body.name) {
@@ -44,7 +45,7 @@ let info = {
 }
 
 app.get('/', (req, res) => {
-  res.send('<h1>Hello World!</h1>')
+  res.send('<h1>Nothing here!</h1>')
 })
 
 app.get('/api/persons', (req, res) => {
